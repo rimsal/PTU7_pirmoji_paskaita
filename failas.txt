@@ -19,5 +19,4 @@
 19 If the implementation is hard to explain, it's a bad idea.
 20 If the implementation is easy to explain, it may be a good idea.
 21 Namespaces are one honking great idea -- let's do more of those!
-22 
-23 2022-12-12 14:17:33
+22 2022-12-16 10:59:18.804683

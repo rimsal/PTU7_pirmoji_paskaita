@@ -91,40 +91,96 @@
 
 import datetime
 import calendar
+#
+# class Sukaktis:
+#
+#     def __init__(self, metai=0, menuo=0, diena=0, valandos=0, minutes=0):
+#         self.data = datetime.datetime(metai, menuo, diena, valandos, minutes)
+#
+#     def smulkiai(self):
+#         skirtumas = datetime.datetime.today() - self.data
+#
+#         print(f"Praėjo metų: ", skirtumas.days // 365)
+#         print("Praėjo mėnesių: ", skirtumas.days / 365 * 12)
+#         print("Praėjo savaičių: ", skirtumas.days / 7)
+#         print("Praėjo dienų: ", skirtumas.days)
+#         print("Praėjo valandų: ", skirtumas.total_seconds() / 3600)
+#         print("Praėjo minučių: ", skirtumas.total_seconds() / 60)
+#         print("Praėjo sekundžių: ", skirtumas.total_seconds())
+#
+#     def arKeliamieji(self):
+#         if calendar.isleap(year=2000):
+#             print("Keliamieji metai")
+#
+#     def atimtiDienas(self, dienos):
+#         return self.data - datetime.timedelta(days=dienos)
+#
+#     def pridetiDienas(self, dienos):
+#         return self.data + datetime.timedelta(days=dienos)
+#
+#     def __str__(self):
+#         return (f"Data: {self.data.year}-{self.data.month}-{self.data.day}")
+#
+#
+# data1 = Sukaktis(1912, 9, 22)
+# data1.arKeliamieji()
+# data1.smulkiai()
+# print(data1.atimtiDienas(5))
+# print(data1.pridetiDienas(45))
 
-class Sukaktis:
+# 3UŽDUOTIS
 
-    def __init__(self, metai=0, menuo=0, diena=0, valandos=0, minutes=0):
-        self.data = datetime.datetime(metai, menuo, diena, valandos, minutes)
-
-    def smulkiai(self):
-        skirtumas = datetime.datetime.today() - self.data
-
-        print(f"Praėjo metų: ", skirtumas.days // 365)
-        print("Praėjo mėnesių: ", skirtumas.days / 365 * 12)
-        print("Praėjo savaičių: ", skirtumas.days / 7)
-        print("Praėjo dienų: ", skirtumas.days)
-        print("Praėjo valandų: ", skirtumas.total_seconds() / 3600)
-        print("Praėjo minučių: ", skirtumas.total_seconds() / 60)
-        print("Praėjo sekundžių: ", skirtumas.total_seconds())
-
-    def arKeliamieji(self):
-        if calendar.isleap(year=2000):
-            print("Keliamieji metai")
-
-    def atimtiDienas(self, dienos):
-        return self.data - datetime.timedelta(days=dienos)
-
-    def pridetiDienas(self, dienos):
-        return self.data + datetime.timedelta(days=dienos)
-
-    def __str__(self):
-        return (f"Data: {self.data.year}-{self.data.month}-{self.data.day}")
+#
+# ivesta = input("Įveskite metus: ")
+# ivesta_data = datetime.datetime.strptime(ivesta, "%Y-%m-%d")
+# now = datetime.datetime.now()
+# skirtumas = now - ivesta_data
+#
+#
+# print("Praėjo metų: ", skirtumas.days // 365)
+# print("Praėjo mėnesių: ", round(skirtumas.days / 365 * 12))
+# print("Praėjo savaičių: ", skirtumas.days // 7)
+# print("Praėjo dienų: ", skirtumas.days)
+# print("Praėjo valandų: ", round(skirtumas.total_seconds() / 3600))
+# print("Praėjo minučių: ", round(skirtumas.total_seconds() / 60))
+# print("Praėjo sekundžių: ", round(skirtumas.total_seconds()))
 
 
-data1 = Sukaktis(2000, 9, 22)
-data1.arKeliamieji()
-data1.smulkiai()
-print(data1.atimtiDienas(5))
-print(data1.pridetiDienas(45))
+# jeigu norime laiko intervalą atvaizduoti taip, pvz:
+# praėjo 2 metai, 7 mėnesiai, 23 dienos ir t.t.
+# konsolėje: pip install python-dateutil
 
+# from dateutil.relativedelta import relativedelta
+# delta = relativedelta(datetime.datetime.now(), kazkokia_data)
+# print(f'metu: {res.years}, menesiu {res.months}, dienu {res.days}, valandu {res.hours}') ir t.t.
+
+# 4 užduotis
+# while True:
+#     try:
+#         print(int(input("Įveskite skaičių: ")) > 0)
+#         break
+#     except ValueError:
+#         print("Įvestas neteisingas skaičius (turi būti sveikasis)")
+
+# 5 užduotis
+
+import datetime
+
+while True:
+    try:
+        ivesta = input("Įveskite metus (YYYY-MM-DD) ")
+        ivesta_data = datetime.datetime.strptime(ivesta, "%Y-%m-%d")
+        break
+    except:
+        print("Įvestas ne sveikasis arba netinkamas datos skaičius")
+
+now = datetime.datetime.now()
+skirtumas = now - ivesta_data
+
+print(f"Praėjo metų: ", skirtumas.days // 365)
+print("Praėjo mėnesių: ", round(skirtumas.days / 365 * 12))
+print("Praėjo savaičių: ", round(skirtumas.days / 7))
+print("Praėjo dienų: ", skirtumas.days)
+print("Praėjo valandų: ", round(skirtumas.total_seconds() / 3600))
+print("Praėjo minučių: ", round(skirtumas.total_seconds() / 60))
+print("Praėjo sekundžių: ", round(skirtumas.total_seconds()))
