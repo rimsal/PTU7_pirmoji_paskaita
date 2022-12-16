@@ -119,10 +119,10 @@ class Sukaktis:
         return self.data + datetime.timedelta(days=dienos)
 
     def __str__(self):
-        return (f"Data: {self.metai}-{self.menuo}-{self.diena}")
+        return (f"Data: {self.data.year}-{self.data.month}-{self.data.day}")
 
 
-data1 = Sukaktis(1996, 9, 22)
+data1 = Sukaktis(2000, 9, 22)
 data1.arKeliamieji()
 data1.smulkiai()
 print(data1.atimtiDienas(5))
