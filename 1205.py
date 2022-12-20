@@ -15,7 +15,8 @@
 # I.2
 #
 # zodis = "Zen of Python"
-# zodis1=  'code Academy mokykla'
+# zodis1 = 'code Academy mokykla'
+#
 # print(zodis[5])
 # print(zodis[7])
 # print(zodis[:3])
@@ -23,9 +24,9 @@
 # print(zodis[::-1])
 # print(zodis.split())
 # print(zodis.replace('Python', 'Programing'))
-#
-# print(zodis1.split([1][-1]))
+# print(zodis1[1])
 # print(zodis1.split('a'))
+
 #
 # # I.3
 #

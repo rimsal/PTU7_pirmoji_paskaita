@@ -10,73 +10,75 @@
 # sakinys = "The Zen of Python"
 # print(sakinys)
 #
-# naujas = map(lambda x: x + "!", sakinys.split())
-# print(" ".join(naujas))
+# naujas = list(map(lambda x: x + "!", sakinys.split()))
 #
-# naujas = [x + "!" for x in sakinys.split()]
-# print(" ".join(naujas))
-# print(sakinys)
+# naujas2 = " ".join(naujas)
+# # naujas = [x + "!" for x in sakinys.split()]
+# print(naujas2)
 
 # 2 UZDUOTIS
 
 # from statistics import mean, median
-#
-# # Atliktų veiksmus su skaičiais iki 50:
-#
+# #
+# # # Atliktų veiksmus su skaičiais iki 50:
+# #
 # skaiciai = list(range(51))
-#
-# # Padaugintų visus sąrašo skaičius iš 10 ir atspausdintų:
-#
+# # print(skaiciai)
+# #
+# # # Padaugintų visus sąrašo skaičius iš 10 ir atspausdintų:
+# #
 # # naujas = map(lambda x: x * 10, skaiciai)
 # # print(list(naujas))
-#
-# # arba
-#
-# naujas = [x * 10 for x in skaiciai]
-# print(naujas)
-#
-# # Atrinktų iš sąrašo skaičius, kurie dalinasi iš 7 ir atspausdintų
-#
+# #
+# # # arba
+# #
+# # naujas = [x * 10 for x in skaiciai]
+# # print(naujas)
+# #
+# # # Atrinktų iš sąrašo skaičius, kurie dalinasi iš 7 ir atspausdintų
+# #
 # # is_7 = filter(lambda x: x % 7 == 0, skaiciai)
 # # print(list(is_7))
-#
-# # arba
-#
-# is_7 = [x for x in skaiciai if x % 7 == 0]
-# print(is_7)
-#
-# # Pakeltų visus sąrašo skaičius kvadratu ir atspausdintų
-#
+# #
+# # # arba
+# #
+# # is_7 = [x for x in skaiciai if x % 7 == 0]
+# # print(is_7)
+# #
+# # # Pakeltų visus sąrašo skaičius kvadratu ir atspausdintų
+# #
 # # kvadratu = list(map(lambda x: x ** 2, skaiciai))
 # # print(list(kvadratu))
-#
-# # arba
-#
+# #
+# # # arba
+# #
 # kvadratu = [x ** 2 for x in skaiciai]
 # print(kvadratu)
-#
-# # Su kvadratų sąrašu atliktų šiuos veiksmus: atspausdintų sumą,
-# # mažiausią ir didžiausią skaičių, vidurkį, medianą
-#
+# #
+# # # Su kvadratų sąrašu atliktų šiuos veiksmus: atspausdintų sumą,
+# # # mažiausią ir didžiausią skaičių, vidurkį, medianą
+# #
 # print(sum(kvadratu))
+# print(len(kvadratu))
 # print(min(kvadratu))
 # print(max(kvadratu))
 # print(mean(kvadratu))
 # print(median(kvadratu))
-#
-# # Surūšiuotų ir atspausdintų kvadratų sąrašą atbulai
-#
+# #
+# # # Surūšiuotų ir atspausdintų kvadratų sąrašą atbulai
+# #
 # atbulai = sorted(kvadratu, reverse=True)
 # print(atbulai)
 
 # 3 UZDUOTIS
 
-# sarasas = [2.5, 2, "Labas", True, 5, 7, 8, 2.8, "Vakaras"]
+sarasas = [2.5, 2, "Labas", True, 5, 7, 8, 2.8, "Vakaras"]
 #
 # # Paskaičiuotų ir atspausdintų visų sąrašo skaičių sumą
 #
-# # suma = sum(filter(lambda x: type(x) is int or type(x) is float, sarasas))
-# # print(suma)
+# suma = sum(filter(lambda x: type(x) is int or type(x) is float, sarasas))
+# suma = [x for x in sarasas if type(x) in [int, float]]
+# print(suma)
 #
 # # arba
 #
@@ -85,19 +87,19 @@
 #
 # # Sudėtų ir atspausdintų visus sąrašo žodžius
 # #
-# # sakinys = filter(lambda x: type(x) is str, sarasas)
-# # print(" ".join(sakinys))
-#
-# # arba
-#
+# sakinys = filter(lambda x: type(x) is str, sarasas)
+# print(" ".join(sakinys))
+# #
+# # # arba
+# #
 # sakinys = [x for x in sarasas if type(x) is str]
 # print(" ".join(sakinys))
 #
 # # Suskaičiuotų ir atspausdintų, kiek sąrašę yra loginių (boolean)
 # # kintamųjų su True reikšme
 #
-# # kiek = sum(filter(lambda x: type(x) is bool, sarasas))
-# # print(kiek)
+# kiek = sum(filter(lambda x: type(x) is bool, sarasas))
+# print(kiek)
 #
 # # arba
 #
@@ -105,12 +107,12 @@
 # print(kiek)
 
 # 4 UZDUOTIS
-
+#
 from operator import attrgetter
-
-# Turėtų klasę Zmogus, su savybėmis vardas ir amzius
-# Klasėje būtų __repr__ metodas, kuris atvaizduotų vardą ir amžių
-
+#
+# # Turėtų klasę Zmogus, su savybėmis vardas ir amzius
+# # Klasėje būtų __repr__ metodas, kuris atvaizduotų vardą ir amžių
+#
 class Zmogus:
     def __init__(self, vardas, amzius):
         self.vardas = vardas
@@ -119,37 +121,37 @@ class Zmogus:
     def __repr__(self):
         return (f"({self.vardas}, {self.amzius})")
 
-# Inicijuoti kelis Zmogus objektus su vardais ir amžiais
-# Įdėti sukurtus Zmogus objektus į naują sąrašą
-
+# # Inicijuoti kelis Zmogus objektus su vardais ir amžiais
+# # Įdėti sukurtus Zmogus objektus į naują sąrašą
+#
 z1 = Zmogus("Ana", 28)
 z2 = Zmogus("Joana", 36)
 z3 = Zmogus("Janis", 49)
-
+#
 sarasas = [z1, z2, z3]
-
-# Surūšiuotų ir atspausdintų sąrašo objektus pagal vardą
-
-# surusiuotas = sorted(sarasas, key=lambda e: e.vardas)
+#
+# # Surūšiuotų ir atspausdintų sąrašo objektus pagal vardą
+#
+# surusiuotas = sorted(sarasas, key=lambda x: x.vardas)
 # print(surusiuotas)
-
-# arba
-
-surusiuotas = sorted(sarasas, key=attrgetter("vardas"))
-print(surusiuotas)
-
-# Surūšiuotų ir atspausdintų sąrašo objektus pagal vardą atbulai
-
-surusiuotas = sorted(sarasas, key=attrgetter("vardas"), reverse=True)
-print(surusiuotas)
-
-# Surūšiuotų ir atspausdintų sąrašo objektus pagal amžių
-
-surusiuotas = sorted(sarasas, key=attrgetter("amzius"))
-print(surusiuotas)
-
-# Surūšiuotų ir atspausdintų sąrašo objektus pagal amžių atbulai
-
-surusiuotas = sorted(sarasas, key=attrgetter("amzius"), reverse=True)
-print(surusiuotas)
+# #
+# # # arba
+# #
+# surusiuotas = sorted(sarasas, key=attrgetter("vardas"))
+# print(surusiuotas)
+# #
+# # # Surūšiuotų ir atspausdintų sąrašo objektus pagal vardą atbulai
+# #
+# surusiuotas = sorted(sarasas, key=attrgetter("vardas"), reverse=True)
+# print(surusiuotas)
+# #
+# # # Surūšiuotų ir atspausdintų sąrašo objektus pagal amžių
+# #
+# surusiuotas = sorted(sarasas, key=attrgetter("amzius"))
+# print(surusiuotas)
+# #
+# # # Surūšiuotų ir atspausdintų sąrašo objektus pagal amžių atbulai
+# #
+# surusiuotas = sorted(sarasas, key=attrgetter("amzius"), reverse=True)
+# print(surusiuotas)
 
