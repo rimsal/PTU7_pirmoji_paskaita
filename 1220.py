@@ -206,26 +206,43 @@
 # NAMU DARBAI
 # 1 uzduotis
 
-from tkinter import *
-
-langas = Tk()
-
-def spausdinti():
-    ivesta = laukas1.get()
-    rezultatas["text"] = "Labas, " + laukas1.get() + "!"
-
-
-uzrasas1 = Label(langas, text="Įveskite vardą")
-laukas1 = Entry(langas)
-mygtukas = Button(langas, text="Patvirtinti", command=spausdinti)
-rezultatas = Label(langas, text="")
-langas.bind("<Return>", lambda  event: spausdinti())
-
-
-uzrasas1.grid(row=0, column=0)
-laukas1.grid(row=0, column=1)
-laukas1.focus()
-mygtukas.grid(row=0, column=2)
-rezultatas.grid(row=1, columnspan=3)
-
-langas.mainloop()
+# from tkinter import *
+# langas = Tk()
+# langas1 = StringVar()
+#
+#
+# def spausdinti():
+#     ivesta = laukas1.get()
+#     rezultatas["text"] = "Labas, " + laukas1.get() + "!"
+#     langas1.set((uzrasas1["text"]))
+# def isvalyti():
+#     rezultatas["text"] = ""
+# def atkurti():
+#     rezultatas["text"] = langas1.get()
+# def iseiti():
+#     langas.destroy()
+#
+# uzrasas1 = Label(langas, text="Įveskite vardą")
+# laukas1 = Entry(langas)
+# mygtukas = Button(langas, text="Patvirtinti", command=spausdinti)
+# rezultatas = Label(langas, text="")
+# langas.bind("<Return>", lambda  event: spausdinti())
+#
+#
+# uzrasas1.grid(row=0, column=0)
+# laukas1.grid(row=0, column=1)
+# laukas1.focus()
+# mygtukas.grid(row=0, column=2)
+# rezultatas.grid(row=1, columnspan=3)
+#
+# meniu = Menu(langas)
+# langas.config(menu=meniu)
+# submeniu = Menu(meniu, tearoff = 0)
+# meniu.add_cascade(label="Meniu", menu=submeniu)
+#
+# submeniu.add_command(label="Išvalyti", command= isvalyti)
+# submeniu.add_command(label="Atkurti paskutinį", command= atkurti)
+# submeniu.add_separator()
+# submeniu.add_command(label="Išeiti", command= iseiti)
+#
+# langas.mainloop()
