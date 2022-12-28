@@ -1,6 +1,7 @@
+from tankas1223_0106.judejimas import Taikinys
+from tankas1223_0106.tankas import Tankas
 
-
-tankutis = Tankas()
+tankas = Tankas()
 taikinys = Taikinys()
 Taskai = 100
 
@@ -8,28 +9,28 @@ while Taskai != 0:  # Programa veiks kol taškai nesibaigs.
     print("Judesiai:")
     print("w: aukštyn, s: žemyn, a: kairėn, d: dešinėn")
     print("b: Boom, i: informacija, q: išeiti")
-    print(f"x: {tankutis.x}, y: {tankutis.y}")
+    print(f"x: {tankas.x}, y: {tankas.y}")
     x = str(input("Tavo pasirinkimas: "))
-    Taskai -= 10  # už kiekvieną ėjimą nuskaitomi 10 taškų
+    Taskai -= 10
 
     if x == 'w':
-        tankutis.move('pirmyn')
+        tankas.judeti('aukštyn')
     elif x == 's':
-        tankutis.move('atgal')
+        tankas.judeti('žemyn')
     elif x == 'a':
-        tankutis.move('kairen')
+        tankas.judeti('kairėn')
     elif x == 'd':
-        tankutis.move('desinen')
+        tankas.judeti('dešinėn')
     elif x == 'b':
-        if tankutis.sauti(taikinys.x, taikinys.y):
+        if tankas.sauti(taikinys.x, taikinys.y):
             print('Pataikei')
             Taskai += 50  # Pataikius pridedami 50 taškų
             taikinys.atkurta()  # Per naują nustatomas taikinys
     elif x == 'i':
-        tankutis.info()
+        tankas.info()
     elif x == "q":
         print("GG")
-        print(f"Targets Hit: {tankutis.suviu_skaicius}")
+        print(f"Targets Hit: {tankas.suviu_skaicius}")
         break
     elif x == "c":
         print(f"{taikinys.x}: {taikinys.y}")
