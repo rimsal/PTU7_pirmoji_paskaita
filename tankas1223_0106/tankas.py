@@ -11,13 +11,13 @@ class Tank:
     def move(self, direction_to_move):
         self.direction = direction_to_move
         if direction_to_move == 'pirmyn':
-            self.y += 1  # Tankas pavažiavo į priekį
+            self.y += 1
         elif direction_to_move == 'atgal':
-            self.y -= 1  # Tankas pavažiavo į atgal
+            self.y -= 1
         elif direction_to_move == 'kairen':
-            self.x -= 1  # Tankas pavažiavo į kairę
+            self.x -= 1
         elif direction_to_move == 'desinen':
-            self.x += 1  # Tankas pavažiavo į dešinę
+            self.x += 1
 
     def shoot(self, targetx, targety):
 
@@ -49,7 +49,7 @@ class Tank:
         print(f"Koordinatės: {self.x}:{self.y}")
         print(f"Šūvių iš viso: {sum(self.shot_directions.values())}")
         print(f"{self.shot_directions}")
-        print((f"Targets Hit: {self.targets_hit}"))
+        print((f"Priešas: {self.targets_hit}"))
 
 
 class Target:
@@ -67,13 +67,13 @@ taikinys = Target()
 POINTS = 100
 
 print("Sveiki, žaidžiam!")
-while POINTS != 0:  # Programa veiks kol taškai nesibaigs.
+while POINTS != 0:
     print("Judesiai:")
     print("w: aukštyn, s: žemyn, a: kairėn, d: dešinėn")
     print("b: Šūvis, i: informacija, q: išeiti")
     print(f"x: {tankas.x}, y: {tankas.y}")
     x = str(input("Tavo pasirinkimas: "))
-    POINTS -= 10  # už kiekvieną ėjimą nuskaitomi 10 taškų
+    POINTS -= 10
 
     if x == 'w':
         tankas.move('pirmyn')
@@ -86,12 +86,12 @@ while POINTS != 0:  # Programa veiks kol taškai nesibaigs.
     elif x == 'b':
         if tankas.shoot(taikinys.x, taikinys.y):
             print('Pataikei')
-            POINTS += 50  # Pataikius pridedami 50 taškų
-            taikinys.reset()  # Per naują nustatomas taikinys
+            POINTS += 50
+            taikinys.reset()
     elif x == 'i':
         tankas.info()
     elif x == "q":
-        print(f"Targets Hit: {tankas.targets_hit}")
+        print(f"Priešas: {tankas.targets_hit}")
         break
     elif x == "c":
         print(f"{taikinys.x}: {taikinys.y}")
